@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VORTEX X V7</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>VORTEX X</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,10 +17,11 @@ box-sizing:border-box;
 }
 
 body{
-background:#040b14;
+background:#050b14;
 font-family:'Poppins',sans-serif;
 color:white;
 padding:18px;
+min-height:100vh;
 }
 
 .topbar{
@@ -29,55 +31,47 @@ align-items:center;
 margin-bottom:20px;
 }
 
-.profile{
-width:52px;
-height:52px;
+.profile-btn,
+.menu-btn{
+width:55px;
+height:55px;
 border-radius:50%;
-background:#0e1625;
-border:1px solid rgba(0,255,120,.25);
+background:#0c1522;
+border:1px solid rgba(0,255,255,.18);
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:24px;
-}
-
-.menu{
-width:52px;
-height:52px;
-border-radius:50%;
-background:#0e1625;
-border:1px solid rgba(0,255,120,.25);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:24px;
+cursor:pointer;
 }
 
 .logo{
-text-align:center;
 font-family:'Orbitron',sans-serif;
-font-size:56px;
+font-size:58px;
 font-weight:800;
-color:#00ff66;
+text-align:center;
+letter-spacing:4px;
+color:#00f5ff;
 
 text-shadow:
-0 0 10px #00ff66,
-0 0 25px #00ff66,
-0 0 50px #00ff66,
-0 0 100px #00ff66;
+0 0 10px #00f5ff,
+0 0 25px #00f5ff,
+0 0 50px #00f5ff,
+0 0 100px #00f5ff;
 }
 
 .subtitle{
 text-align:center;
-color:#6fbf84;
-font-size:13px;
+margin-top:8px;
+font-size:14px;
 letter-spacing:2px;
-margin-top:10px;
+color:#7aaec2;
 }
 
 .hero{
-margin-top:30px;
 text-align:center;
+margin-top:30px;
+margin-bottom:30px;
 }
 
 .hero h1{
@@ -86,107 +80,122 @@ font-weight:800;
 }
 
 .hero p{
-color:#94a3b8;
-margin-top:10px;
+margin-top:8px;
+color:#8ea0b5;
 }
 
-.profile-card{
-margin-top:25px;
-padding:18px;
-border-radius:20px;
-background:#09111d;
-border:1px solid rgba(0,255,120,.2);
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.avatar{
-width:70px;
-height:70px;
-border-radius:50%;
-background:#10231a;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:32px;
-}
-
-.user h3{
-font-size:18px;
-}
-
-.user p{
-color:#8aa0b6;
-font-size:14px;
-margin-top:4px;
-}
- .card{
+.card{
 position:relative;
 overflow:hidden;
-margin-top:25px;
 border-radius:28px;
-padding:20px;
-background:#08111d;
-border:1px solid rgba(0,255,120,.25);
+padding:22px;
+margin-bottom:20px;
+background:#0b1422;
+border:1px solid rgba(255,255,255,.06);
 }
 
 .dragon-card{
-box-shadow:0 0 30px rgba(0,255,120,.15);
+box-shadow:0 0 30px rgba(0,255,180,.12);
 }
 
 .baccarat-card{
-box-shadow:0 0 30px rgba(170,0,255,.15);
-border:1px solid rgba(170,0,255,.25);
-}
-
-.game-row{
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.game-images{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.game-images img{
-height:85px;
-width:auto;
+box-shadow:0 0 30px rgba(180,0,255,.12);
 }
 
 .game-title{
-font-size:34px;
+font-size:32px;
 font-weight:700;
-margin-top:10px;
+margin-top:12px;
 }
 
 .game-desc{
 margin-top:8px;
 color:#8ea0b5;
-font-size:15px;
+font-size:14px;
+}
+
+.image-row{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
+}
+
+.image-row img{
+height:95px;
+width:auto;
 }
 
 .play-btn{
-margin-top:18px;
 display:inline-block;
-padding:12px 28px;
+margin-top:18px;
+padding:12px 30px;
 border-radius:16px;
-background:#00b050;
+background:#00c853;
 color:white;
-text-decoration:none;
 font-weight:700;
+text-decoration:none;
 }
 
 .play-btn-purple{
 background:#7c3aed;
 }
+ .telegram-btn,
+.logout-btn{
+display:block;
+width:100%;
+text-align:center;
+padding:18px;
+border-radius:20px;
+font-weight:700;
+font-size:18px;
+text-decoration:none;
+margin-top:15px;
+}
 
-.arrow{
-font-size:34px;
-color:#00ff66;
+.telegram-btn{
+background:linear-gradient(90deg,#009dff,#00c8ff);
+color:white;
+box-shadow:0 0 25px rgba(0,180,255,.25);
+}
+
+.logout-btn{
+background:linear-gradient(90deg,#ff2d55,#ff5e5e);
+color:white;
+box-shadow:0 0 25px rgba(255,60,90,.25);
+}
+
+.footer{
+text-align:center;
+margin-top:35px;
+font-size:13px;
+color:#7f8ea0;
+letter-spacing:1px;
+}
+
+.popup{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+z-index:999;
+}
+
+.popup-content{
+background:#0b1422;
+margin:120px 20px;
+padding:20px;
+border-radius:22px;
+border:1px solid rgba(0,255,255,.18);
+}
+
+.popup h3{
+margin-bottom:15px;
+}
+
+.popup p{
+margin-bottom:10px;
+color:#9bb0c3;
 }
 </style>
 </head>
@@ -194,24 +203,23 @@ color:#00ff66;
 <body>
 
 <div class="topbar">
-<div class="profile">👤</div>
-<div class="menu">⋮</div>
+
+<div class="profile-btn" onclick="openProfile()">
+👤
 </div>
 
-<div class="profile-card">
-<div class="avatar">👤</div>
-
-<div class="user">
-<h3>Ashish Arya</h3>
-<p>+91XXXXXXXXXX</p>
-<p>30 Days Left</p>
-</div>
+<div class="menu-btn" onclick="openMenu()">
+⋮
 </div>
 
-<div class="logo">VORTEX X</div>
+</div>
+
+<div class="logo">
+VORTEX X
+</div>
 
 <div class="subtitle">
-AI POWERED GAMING ANALYTICS
+PREMIUM ANALYTICS PLATFORM
 </div>
 
 <div class="hero">
@@ -223,15 +231,9 @@ AI POWERED GAMING ANALYTICS
 
 <div class="card dragon-card">
 
-<div class="game-row">
-
-<div class="game-images">
+<div class="image-row">
 <img src="dragon.png.png">
 <img src="tiger.png.png">
-</div>
-
-<div class="arrow">›</div>
-
 </div>
 
 <div class="game-title">
@@ -254,14 +256,8 @@ PLAY NOW
 
 <div class="card baccarat-card">
 
-<div class="game-row">
-
-<div class="game-images">
+<div class="image-row">
 <img src="cards.png.png">
-</div>
-
-<div class="arrow">›</div>
-
 </div>
 
 <div class="game-title">
@@ -279,54 +275,106 @@ PLAY NOW
 </div>
 
 </a>
-<div style="margin-top:25px;">
-
 <a href="https://t.me/Mindset_MoneyOfficial"
-style="
-display:block;
-text-align:center;
-padding:18px;
-border-radius:20px;
-background:linear-gradient(90deg,#0088ff,#00bfff);
-color:white;
-text-decoration:none;
-font-weight:700;
-font-size:20px;
-box-shadow:0 0 30px rgba(0,150,255,.35);
-margin-bottom:18px;
-">
-✈ JOIN TELEGRAM
+class="telegram-btn">
+📢 JOIN TELEGRAM
 </a>
 
 <a href="login.html"
-style="
-display:block;
-text-align:center;
-padding:18px;
-border-radius:20px;
-background:linear-gradient(90deg,#ff2d55,#ff4d4d);
-color:white;
-text-decoration:none;
-font-weight:700;
-font-size:20px;
-box-shadow:0 0 30px rgba(255,50,80,.35);
-">
-↪ LOGOUT
+class="logout-btn">
+🚪 LOGOUT
 </a>
 
-</div>
-
-<div style="
-text-align:center;
-margin-top:35px;
-color:#7e8ea0;
-font-size:13px;
-letter-spacing:1px;
-">
-
+<div class="footer">
 VORTEX X © 2026 | All Rights Reserved
+</div>
+
+<!-- PROFILE POPUP -->
+
+<div id="profilePopup" class="popup">
+
+<div class="popup-content">
+
+<h3>👤 My Profile</h3>
+
+<p><b>Name:</b> Ashish Arya</p>
+<p><b>Phone:</b> +91XXXXXXXXXX</p>
+<p><b>Email:</b> your@email.com</p>
+<p><b>Plan:</b> Premium</p>
+<p><b>Days Left:</b> 30</p>
+
+<br>
+
+<button onclick="closeProfile()"
+style="
+width:100%;
+padding:14px;
+border:none;
+border-radius:14px;
+background:#00c8ff;
+color:white;
+font-weight:700;
+">
+Close
+</button>
 
 </div>
+
+</div>
+
+<!-- MENU POPUP -->
+
+<div id="menuPopup" class="popup">
+
+<div class="popup-content">
+
+<h3>☰ Menu</h3>
+
+<p>🏠 Dashboard</p>
+<p>🐉 Dragon Tiger</p>
+<p>🃏 Baccarat</p>
+<p>📞 Support</p>
+<p>📢 Telegram</p>
+<p>🚪 Logout</p>
+
+<br>
+
+<button onclick="closeMenu()"
+style="
+width:100%;
+padding:14px;
+border:none;
+border-radius:14px;
+background:#7c3aed;
+color:white;
+font-weight:700;
+">
+Close
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openProfile(){
+document.getElementById("profilePopup").style.display="block";
+}
+
+function closeProfile(){
+document.getElementById("profilePopup").style.display="none";
+}
+
+function openMenu(){
+document.getElementById("menuPopup").style.display="block";
+}
+
+function closeMenu(){
+document.getElementById("menuPopup").style.display="none";
+}
+
+</script>
 
 </body>
-</html>
+</html> 
