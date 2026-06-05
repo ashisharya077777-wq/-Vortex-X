@@ -209,3 +209,170 @@ TIE
 </div>
 
 </div>
+<div class="card">
+<h2>📜 Round History</h2>
+<div id="history" class="history"></div>
+</div>
+
+<div class="card">
+<h2>📊 Analytics</h2>
+
+<div class="info">
+<p>Total Rounds: <span id="totalRounds">0</span></p>
+<p>Dragon Win %: <span id="dragonRate">0%</span></p>
+<p>Tiger Win %: <span id="tigerRate">0%</span></p>
+<p>Tie Rate: <span id="tieRate">0%</span></p>
+
+<p>Current Streak:
+<span id="currentStreak">0</span>
+</p>
+
+<p>Trend:
+<span id="trend">Neutral</span>
+</p>
+
+<p>Probability:
+<span id="probability">Waiting...</span>
+</p>
+</div>
+
+<button class="reset" onclick="resetData()">
+RESET SESSION
+</button>
+
+</div>
+
+<a href="dashboard.html" class="back">
+⬅ BACK TO DASHBOARD
+</a>
+
+<script>
+
+let dragon=0;
+let tiger=0;
+let tie=0;
+
+let history=[];
+
+function addResult(type){
+
+history.push(type);
+
+if(type==="D") dragon++;
+if(type==="T") tiger++;
+if(type==="I") tie++;
+
+updateUI();
+
+}
+
+function updateUI(){
+
+document.getElementById("dragonCount").innerText=dragon;
+document.getElementById("tigerCount").innerText=tiger;
+document.getElementById("tieCount").innerText=tie;
+
+let total=dragon+tiger+tie;
+
+document.getElementById("totalRounds").innerText=total;
+
+document.getElementById("dragonRate").innerText=
+total?((dragon/total)*100).toFixed(1)+"%":"0%";
+
+document.getElementById("tigerRate").innerText=
+total?((tiger/total)*100).toFixed(1)+"%":"0%";
+
+document.getElementById("tieRate").innerText=
+total?((tie/total)*100).toFixed(1)+"%":"0%";
+
+let historyBox=document.getElementById("history");
+historyBox.innerHTML="";
+
+history.slice().reverse().forEach(r=>{
+
+let div=document.createElement("div");
+
+if(r==="D"){
+div.className="ball d";
+div.innerText="D";
+}
+
+if(r==="T"){
+div.className="ball t";
+div.innerText="T";
+}
+
+if(r==="I"){
+div.className="ball i";
+div.innerText="T";
+}
+
+historyBox.appendChild(div);
+
+});
+
+updateTrend();
+updateStreak();
+
+}
+
+function updateTrend(){
+
+let trend="Neutral";
+let probability="50% / 50%";
+
+if(dragon>tiger){
+trend="🐉 Dragon Dominant";
+probability="Dragon 55% | Tiger 45%";
+}
+
+if(tiger>dragon){
+trend="🐯 Tiger Dominant";
+probability="Tiger 55% | Dragon 45%";
+}
+
+document.getElementById("trend").innerText=trend;
+document.getElementById("probability").innerText=probability;
+
+}
+
+function updateStreak(){
+
+if(history.length===0){
+document.getElementById("currentStreak").innerText="0";
+return;
+}
+
+let last=history[history.length-1];
+let streak=1;
+
+for(let i=history.length-2;i>=0;i--){
+
+if(history[i]===last){
+streak++;
+}else{
+break;
+}
+
+}
+
+document.getElementById("currentStreak").innerText=
+last+" x"+streak;
+
+}
+
+function resetData(){
+
+dragon=0;
+tiger=0;
+tie=0;
+history=[];
+
+updateUI();
+
+}
+
+</script>
+
+</body>
+</html>
