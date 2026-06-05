@@ -1,1 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>VORTEX X - Bankroll Setup</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050b14;
+color:white;
+padding:20px;
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.back{
+font-size:28px;
+text-decoration:none;
+color:white;
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+}
+
+.hero{
+text-align:center;
+margin-top:20px;
+margin-bottom:35px;
+}
+
+.hero h1{
+font-size:56px;
+font-weight:800;
+line-height:1.05;
+}
+
+.green{
+color:#00ff66;
+}
+
+.hero p{
+margin-top:15px;
+color:#9aa0aa;
+font-size:16px;
+line-height:1.6;
+}
+
+.card{
+background:#0b1626;
+border:1px solid rgba(255,255,255,.08);
+border-radius:24px;
+padding:22px;
+margin-bottom:24px;
+box-shadow:0 0 30px rgba(0,255,200,.08);
+}
+
+.label{
+font-size:14px;
+letter-spacing:3px;
+color:#9aa0aa;
+margin-bottom:15px;
+}
+
+.input{
+width:100%;
+padding:18px;
+border-radius:18px;
+border:none;
+background:#040912;
+color:white;
+font-size:30px;
+margin-bottom:15px;
+}
+
+.quick{
+display:grid;
+grid-template-columns:1fr 1fr 1fr 1fr;
+gap:10px;
+}
+
+.quick button{
+height:50px;
+border:none;
+border-radius:14px;
+background:#151f30;
+color:white;
+font-size:16px;
+}
+
+.continue{
+display:block;
+width:100%;
+text-align:center;
+padding:20px;
+border-radius:18px;
+background:#00c853;
+color:white;
+font-size:22px;
+font-weight:700;
+text-decoration:none;
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<a href="dashboard.html" class="back">←</a>
+<div class="logo">VORTEX X</div>
+⚙️
+</div>
+
+<div class="hero">
+<h1>
+Predict <span class="green">nahi.</span><br>
+Discipline.
+</h1>
+
+<p>
+Set rules → play within them → walk away whole.
+</p>
+</div> 
+  <div class="card">
+
+<div class="label">
+💰 YOUR BANKROLL
+</div>
+
+<input id="bankroll"
+class="input"
+type="number"
+placeholder="5000">
+
+<div class="quick">
+<button onclick="setBankroll(5000)">₹5K</button>
+<button onclick="setBankroll(10000)">₹10K</button>
+<button onclick="setBankroll(20000)">₹20K</button>
+<button onclick="setBankroll(50000)">₹50K</button>
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="label">
+🎯 PROFIT TARGET
+</div>
+
+<input id="target"
+class="input"
+type="number"
+placeholder="1000">
+
+<div class="quick">
+<button onclick="setTarget(500)">₹500</button>
+<button onclick="setTarget(1000)">₹1K</button>
+<button onclick="setTarget(2000)">₹2K</button>
+<button onclick="setTarget(5000)">₹5K</button>
+</div>
+
+</div>
+
+<a href="dragon-tiger.html"
+class="continue"
+onclick="saveData()">
+CONTINUE TO GAME →
+</a>
+
+<script>
+
+function setBankroll(value){
+document.getElementById("bankroll").value=value;
+}
+
+function setTarget(value){
+document.getElementById("target").value=value;
+}
+
+function saveData(){
+
+localStorage.setItem(
+"bankroll",
+document.getElementById("bankroll").value
+);
+
+localStorage.setItem(
+"target",
+document.getElementById("target").value
+);
+
+}
+
+</script>
+
+</body>
+</html>
