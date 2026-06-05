@@ -1,110 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VORTEXX Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VORTEX X Premium Dashboard</title>
 
 <style>
-body{
+
+*{
 margin:0;
-background:#050b14;
+padding:0;
+box-sizing:border-box;
 font-family:Arial,sans-serif;
+}
+
+body{
+background:#050b14;
 color:white;
 padding:20px;
 }
 
 .logo{
 text-align:center;
-font-size:50px;
+font-size:52px;
 font-weight:bold;
 color:#00ffcc;
-text-shadow:0 0 20px #00ffcc;
-margin:20px 0;
+text-shadow:0 0 25px #00ffcc;
+margin-top:20px;
 }
 
 .sub{
 text-align:center;
-color:#aaa;
+color:#9aa0aa;
+margin-top:10px;
 margin-bottom:30px;
+font-size:18px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-bottom:25px;
+}
+
+.stat{
+background:#0b1626;
+border:1px solid #00ffcc;
+border-radius:18px;
+padding:18px;
+text-align:center;
+box-shadow:0 0 15px rgba(0,255,204,.15);
+}
+
+.stat h3{
+font-size:15px;
+color:#aaa;
+margin-bottom:8px;
+}
+
+.stat span{
+font-size:26px;
+font-weight:bold;
+color:#00ffcc;
 }
 
 .card{
-display:block;
-text-decoration:none;
-background:#0d1626;
+background:#0b1626;
 border:1px solid #00ffcc;
-border-radius:20px;
+border-radius:22px;
 padding:25px;
 margin-bottom:20px;
+box-shadow:0 0 25px rgba(0,255,204,.18);
+text-decoration:none;
+display:block;
 color:white;
-box-shadow:0 0 20px rgba(0,255,204,.2);
 }
 
 .card h2{
-margin:0;
-font-size:34px;
+font-size:38px;
+margin-bottom:10px;
 }
 
 .card p{
-color:#bbb;
+font-size:18px;
+color:#bcbcbc;
 }
 
-.btn{
-display:block;
-text-align:center;
-padding:15px;
-border-radius:12px;
-text-decoration:none;
-font-weight:bold;
-margin-top:15px;
+.dragon{
+border-color:#00ffcc;
+}
+
+.baccarat{
+border-color:#ff5757;
+}
+
+.bankroll{
+border-color:#ffd166;
 }
 
 .telegram{
 background:#229ED9;
-color:white;
+border:none;
+text-align:center;
+font-weight:bold;
+font-size:22px;
 }
 
 .logout{
-background:#ff4444;
-color:white;
+background:#ff4d4d;
+border:none;
+text-align:center;
+font-weight:bold;
+font-size:22px;
 }
 
 .footer{
 text-align:center;
-margin-top:30px;
-color:#888;
+color:#777;
+margin-top:35px;
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="logo">VORTEXX</div>
+<div class="logo">VORTEX X</div>
 
 <div class="sub">
-Premium Analytics Dashboard
+Premium Analytics Platform
 </div>
 
-<a href="dragon-tiger.html" class="card">
+<div class="stats">
+
+<div class="stat">
+<h3>Total Sessions</h3>
+<span>24</span>
+</div>
+
+<div class="stat">
+<h3>Win Rate</h3>
+<span>68%</span>
+</div>
+
+<div class="stat">
+<h3>Bankroll</h3>
+<span>₹5000</span>
+</div>
+
+<div class="stat">
+<h3>Profit</h3>
+<span>+₹450</span>
+</div>
+
+</div> 
+  <a href="dragon-tiger.html" class="card dragon">
 <h2>🐉 Dragon Tiger</h2>
-<p>Session Tracking • Notes • Statistics</p>
+<p>Roadmap • Streak • Statistics • Trend Analysis</p>
 </a>
 
-<a href="baccarat.html" class="card">
-<h2>🎴 Baccarat</h2>
-<p>Big Road • Tracking • Statistics</p>
+<a href="baccarat.html" class="card baccarat">
+<h2>🎴 Baccarat Pro</h2>
+<p>Big Road • Shoe Tracking • Session Statistics</p>
 </a>
 
-<a href="https://t.me/Mindset_MoneyOfficial" class="btn telegram">
-JOIN TELEGRAM
+<div class="card bankroll">
+<h2>💰 Bankroll Manager</h2>
+<p>Track Budget, Target and Profit Progress</p>
+</div>
+
+<a href="https://t.me/Mindset_MoneyOfficial" class="card telegram">
+📢 JOIN TELEGRAM
 </a>
 
-<a href="index.html" class="btn logout">
-LOGOUT
-</a>
+<div class="card logout">
+🚪 LOGOUT
+</div>
 
 <div class="footer">
-© 2026 VORTEXX Analytics
+© 2026 VORTEX X Premium Analytics
 </div>
 
 </body>
