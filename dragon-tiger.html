@@ -1,28 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dragon Tiger Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VORTEX X - Dragon Tiger Pro</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
 background:#050b14;
-font-family:Arial;
 color:white;
 padding:20px;
-margin:0;
 }
 
 .logo{
-font-size:40px;
+text-align:center;
+font-size:42px;
 font-weight:bold;
 color:#00ffcc;
+text-shadow:0 0 20px #00ffcc;
+margin-bottom:10px;
+}
+
+.subtitle{
 text-align:center;
-margin:20px 0;
+color:#aaa;
+margin-bottom:25px;
 }
 
 .card{
-background:#0d1626;
+background:#0b1626;
 border:1px solid #00ffcc;
 border-radius:20px;
 padding:20px;
@@ -30,28 +43,123 @@ margin-bottom:20px;
 box-shadow:0 0 20px rgba(0,255,204,.2);
 }
 
-h2{
-margin-top:0;
+.stats{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:10px;
 }
 
-input,textarea{
-width:100%;
-padding:12px;
-margin-top:10px;
-border:none;
-border-radius:10px;
+.stat{
+text-align:center;
+padding:15px;
+border-radius:15px;
 background:#08111f;
+}
+
+.stat h3{
+font-size:18px;
+margin-bottom:8px;
+}
+
+.stat span{
+font-size:24px;
+font-weight:bold;
+}
+
+.dragon{
+border:1px solid #00ffcc;
+}
+
+.tiger{
+border:1px solid #ff5757;
+}
+
+.tie{
+border:1px solid #ffd166;
+}
+
+.buttons{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:10px;
+margin-top:15px;
+}
+
+button{
+padding:15px;
+border:none;
+border-radius:12px;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+}
+
+.btn-dragon{
+background:#00ffcc;
+color:black;
+}
+
+.btn-tiger{
+background:#ff5757;
 color:white;
 }
 
-.btn{
+.btn-tie{
+background:#ffd166;
+color:black;
+}
+
+.history{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-top:15px;
+}
+
+.ball{
+width:40px;
+height:40px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+}
+
+.d{
+background:#00ffcc;
+color:black;
+}
+
+.t{
+background:#ff5757;
+}
+
+.i{
+background:#ffd166;
+color:black;
+}
+
+.info{
+line-height:2;
+font-size:18px;
+}
+
+.reset{
+width:100%;
+background:#ffffff;
+color:black;
+margin-top:15px;
+}
+
+.back{
 display:block;
 text-align:center;
 background:#00ffcc;
 color:black;
-padding:14px;
-border-radius:12px;
 text-decoration:none;
+padding:15px;
+border-radius:12px;
 font-weight:bold;
 margin-top:15px;
 }
@@ -60,26 +168,44 @@ margin-top:15px;
 
 <body>
 
-<div class="logo">🐉 DRAGON TIGER</div>
+<div class="logo">VORTEX X</div>
+<div class="subtitle">Dragon Tiger Pro Dashboard</div>
 
 <div class="card">
-<h2>Session Tracker</h2>
-<p>Total Wins: 0</p>
-<p>Total Losses: 0</p>
+
+<div class="stats">
+
+<div class="stat dragon">
+<h3>🐉 Dragon</h3>
+<span id="dragonCount">0</span>
 </div>
 
-<div class="card">
-<h2>Notes</h2>
-<textarea rows="6" placeholder="Write session notes here..."></textarea>
+<div class="stat tiger">
+<h3>🐯 Tiger</h3>
+<span id="tigerCount">0</span>
 </div>
 
-<div class="card">
-<h2>Statistics</h2>
-<p>Dragon Win Rate: --%</p>
-<p>Tiger Win Rate: --%</p>
+<div class="stat tie">
+<h3>⚪ Tie</h3>
+<span id="tieCount">0</span>
 </div>
 
-<a href="index.html" class="btn">BACK TO HOME</a>
+</div>
 
-</body>
-  </html>
+<div class="buttons">
+
+<button class="btn-dragon" onclick="addResult('D')">
+DRAGON
+</button>
+
+<button class="btn-tiger" onclick="addResult('T')">
+TIGER
+</button>
+
+<button class="btn-tie" onclick="addResult('I')">
+TIE
+</button>
+
+</div>
+
+</div>
