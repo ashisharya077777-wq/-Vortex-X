@@ -1,12 +1,11 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VORTEX X V7</title>
 
-<title>VORTEX X</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,76 +13,71 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
 }
 
 body{
-background:
-radial-gradient(circle at top,#0f1b2d 0%,#050b14 60%);
+background:#040b14;
+font-family:'Poppins',sans-serif;
 color:white;
-min-height:100vh;
-padding:20px;
+padding:18px;
 }
 
 .topbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:30px;
+margin-bottom:20px;
 }
 
 .profile{
 width:52px;
 height:52px;
 border-radius:50%;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
+background:#0e1625;
+border:1px solid rgba(0,255,120,.25);
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:24px;
-backdrop-filter:blur(10px);
 }
 
 .menu{
 width:52px;
 height:52px;
 border-radius:50%;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
+background:#0e1625;
+border:1px solid rgba(0,255,120,.25);
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:24px;
-backdrop-filter:blur(10px);
 }
 
 .logo{
 text-align:center;
-font-size:58px;
+font-family:'Orbitron',sans-serif;
+font-size:56px;
 font-weight:800;
-letter-spacing:4px;
-color:#00f5ff;
+color:#00ff66;
 
 text-shadow:
-0 0 10px #00f5ff,
-0 0 20px #00f5ff,
-0 0 40px #00f5ff,
-0 0 80px #00f5ff;
+0 0 10px #00ff66,
+0 0 25px #00ff66,
+0 0 50px #00ff66,
+0 0 100px #00ff66;
 }
 
 .subtitle{
 text-align:center;
-margin-top:10px;
-color:#8ea0b5;
-font-size:15px;
+color:#6fbf84;
+font-size:13px;
 letter-spacing:2px;
+margin-top:10px;
 }
 
 .hero{
+margin-top:30px;
 text-align:center;
-margin-top:40px;
-margin-bottom:35px;
 }
 
 .hero h1{
@@ -92,105 +86,126 @@ font-weight:800;
 }
 
 .hero p{
+color:#94a3b8;
 margin-top:10px;
+}
+
+.profile-card{
+margin-top:25px;
+padding:18px;
+border-radius:20px;
+background:#09111d;
+border:1px solid rgba(0,255,120,.2);
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.avatar{
+width:70px;
+height:70px;
+border-radius:50%;
+background:#10231a;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+}
+
+.user h3{
+font-size:18px;
+}
+
+.user p{
+color:#8aa0b6;
+font-size:14px;
+margin-top:4px;
+}
+ .card{
+position:relative;
+overflow:hidden;
+margin-top:25px;
+border-radius:28px;
+padding:20px;
+background:#08111d;
+border:1px solid rgba(0,255,120,.25);
+}
+
+.dragon-card{
+box-shadow:0 0 30px rgba(0,255,120,.15);
+}
+
+.baccarat-card{
+box-shadow:0 0 30px rgba(170,0,255,.15);
+border:1px solid rgba(170,0,255,.25);
+}
+
+.game-row{
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.game-images{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.game-images img{
+height:85px;
+width:auto;
+}
+
+.game-title{
+font-size:34px;
+font-weight:700;
+margin-top:10px;
+}
+
+.game-desc{
+margin-top:8px;
 color:#8ea0b5;
 font-size:15px;
 }
 
-.card{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:22px;
-border-radius:24px;
-margin-bottom:18px;
-text-decoration:none;
+.play-btn{
+margin-top:18px;
+display:inline-block;
+padding:12px 28px;
+border-radius:16px;
+background:#00b050;
 color:white;
-border:1px solid rgba(255,255,255,.08);
-backdrop-filter:blur(12px);
-}
-
-.dragon{
-background:linear-gradient(90deg,#071a20,#0c1626);
-box-shadow:0 0 25px rgba(0,255,170,.15);
-}
-
-.baccarat{
-background:linear-gradient(90deg,#14121f,#0c1626);
-box-shadow:0 0 25px rgba(255,60,120,.15);
-}
-
-.left{
-display:flex;
-align-items:center;
-}
-
-.icon{
-font-size:52px;
-margin-right:15px;
-}
-
-.title{
-font-size:28px;
+text-decoration:none;
 font-weight:700;
 }
 
-.desc{
-font-size:14px;
-color:#9ca9ba;
-margin-top:5px;
+.play-btn-purple{
+background:#7c3aed;
 }
 
 .arrow{
-font-size:30px;
-color:#00ffcc;
-} 
-  .top-buttons{
-margin-top:25px;
+font-size:34px;
+color:#00ff66;
 }
-
-.btn{
-display:block;
-text-align:center;
-padding:18px;
-border-radius:18px;
-text-decoration:none;
-font-weight:700;
-font-size:18px;
-margin-bottom:15px;
-}
-
-.telegram{
-background:linear-gradient(90deg,#0088cc,#00b4ff);
-color:white;
-box-shadow:0 0 25px rgba(0,180,255,.25);
-}
-
-.logout{
-background:linear-gradient(90deg,#ff4d4d,#ff6b6b);
-color:white;
-box-shadow:0 0 25px rgba(255,80,80,.25);
-}
-
-.footer{
-text-align:center;
-margin-top:35px;
-color:#7f8b99;
-font-size:13px;
-letter-spacing:1px;
-}
-
 </style>
 </head>
 
 <body>
 
 <div class="topbar">
-
 <div class="profile">👤</div>
-
 <div class="menu">⋮</div>
+</div>
 
+<div class="profile-card">
+<div class="avatar">👤</div>
+
+<div class="user">
+<h3>Ashish Arya</h3>
+<p>+91XXXXXXXXXX</p>
+<p>30 Days Left</p>
+</div>
 </div>
 
 <div class="logo">VORTEX X</div>
@@ -204,64 +219,114 @@ AI POWERED GAMING ANALYTICS
 <p>Select a game to continue</p>
 </div>
 
-<a href="bankroll.html" class="card dragon">
+<a href="bankroll.html" style="text-decoration:none;color:white;">
 
-<div class="left">
+<div class="card dragon-card">
 
-<div class="icon">
-🐉🐯
-</div>
+<div class="game-row">
 
-<div>
-<div class="title">Dragon Tiger</div>
-<div class="desc">
-Roadmap • Trend • Statistics
-</div>
-</div>
-
+<div class="game-images">
+<img src="dragon.png.png">
+<img src="tiger.png.png">
 </div>
 
 <div class="arrow">›</div>
+
+</div>
+
+<div class="game-title">
+DRAGON TIGER
+</div>
+
+<div class="game-desc">
+Roadmap • Trend • Statistics
+</div>
+
+<div class="play-btn">
+PLAY NOW
+</div>
+
+</div>
 
 </a>
 
-<a href="baccarat.html" class="card baccarat">
+<a href="baccarat.html" style="text-decoration:none;color:white;">
 
-<div class="left">
+<div class="card baccarat-card">
 
-<div class="icon">
-🃏
-</div>
+<div class="game-row">
 
-<div>
-<div class="title">Baccarat Pro</div>
-<div class="desc">
-Big Road • Session • Stats
-</div>
-</div>
-
+<div class="game-images">
+<img src="cards.png.png">
 </div>
 
 <div class="arrow">›</div>
 
-</a> 
-<div class="top-buttons">
+</div>
+
+<div class="game-title">
+BACCARAT PRO
+</div>
+
+<div class="game-desc">
+Big Road • Session • Stats
+</div>
+
+<div class="play-btn play-btn-purple">
+PLAY NOW
+</div>
+
+</div>
+
+</a>
+<div style="margin-top:25px;">
 
 <a href="https://t.me/Mindset_MoneyOfficial"
-class="btn telegram">
-📢 JOIN TELEGRAM
+style="
+display:block;
+text-align:center;
+padding:18px;
+border-radius:20px;
+background:linear-gradient(90deg,#0088ff,#00bfff);
+color:white;
+text-decoration:none;
+font-weight:700;
+font-size:20px;
+box-shadow:0 0 30px rgba(0,150,255,.35);
+margin-bottom:18px;
+">
+✈ JOIN TELEGRAM
 </a>
 
 <a href="login.html"
-class="btn logout">
-🚪 LOGOUT
+style="
+display:block;
+text-align:center;
+padding:18px;
+border-radius:20px;
+background:linear-gradient(90deg,#ff2d55,#ff4d4d);
+color:white;
+text-decoration:none;
+font-weight:700;
+font-size:20px;
+box-shadow:0 0 30px rgba(255,50,80,.35);
+">
+↪ LOGOUT
 </a>
 
 </div>
 
-<div class="footer">
+<div style="
+text-align:center;
+margin-top:35px;
+color:#7e8ea0;
+font-size:13px;
+letter-spacing:1px;
+">
+
 VORTEX X © 2026 | All Rights Reserved
+
 </div>
 
 </body>
-</html>  
+</html>
