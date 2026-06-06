@@ -1,376 +1,450 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VORTEX X - Dragon Tiger Pro</title>
+
+<title>Dragon Tiger Pro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
 }
 
 body{
 background:#050b14;
 color:white;
-padding:20px;
+font-family:'Poppins',sans-serif;
+padding:18px;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.back{
+width:52px;
+height:52px;
+border-radius:50%;
+background:#0d1624;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+color:white;
+font-size:24px;
+border:1px solid rgba(0,255,255,.15);
+}
+
+.menu{
+width:52px;
+height:52px;
+border-radius:50%;
+background:#0d1624;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+border:1px solid rgba(0,255,255,.15);
 }
 
 .logo{
 text-align:center;
+font-family:'Orbitron',sans-serif;
 font-size:42px;
-font-weight:bold;
-color:#00ffcc;
-text-shadow:0 0 20px #00ffcc;
-margin-bottom:10px;
+font-weight:800;
+color:#00f5ff;
+
+text-shadow:
+0 0 10px #00f5ff,
+0 0 25px #00f5ff,
+0 0 50px #00f5ff;
 }
 
 .subtitle{
 text-align:center;
-color:#aaa;
-margin-bottom:25px;
+margin-top:8px;
+font-size:13px;
+letter-spacing:2px;
+color:#7ba4c0;
 }
 
-.card{
-background:#0b1626;
-border:1px solid #00ffcc;
-border-radius:20px;
-padding:20px;
-margin-bottom:20px;
-box-shadow:0 0 20px rgba(0,255,204,.2);
+.stats-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+margin-top:25px;
 }
 
-.stats{
+.stat-card{
+background:#0b1422;
+border-radius:22px;
+padding:18px;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.stat-title{
+font-size:13px;
+color:#8ea0b5;
+}
+
+.stat-value{
+font-size:28px;
+font-weight:700;
+margin-top:10px;
+}
+
+.profit{
+color:#00ff66;
+}
+
+.loss{
+color:#ff4d4d;
+}
+
+.live{
+color:#00f5ff;
+}
+
+.section{
+margin-top:25px;
+}
+  .action-grid{
 display:grid;
 grid-template-columns:1fr 1fr 1fr;
-gap:10px;
+gap:12px;
+margin-top:25px;
 }
 
-.stat{
-text-align:center;
-padding:15px;
-border-radius:15px;
-background:#08111f;
-}
-
-.stat h3{
-font-size:18px;
-margin-bottom:8px;
-}
-
-.stat span{
-font-size:24px;
-font-weight:bold;
-}
-
-.dragon{
-border:1px solid #00ffcc;
-}
-
-.tiger{
-border:1px solid #ff5757;
-}
-
-.tie{
-border:1px solid #ffd166;
-}
-
-.buttons{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:10px;
-margin-top:15px;
-}
-
-button{
-padding:15px;
+.action-btn{
+height:120px;
 border:none;
-border-radius:12px;
-font-weight:bold;
-font-size:16px;
+border-radius:24px;
+color:white;
+font-size:22px;
+font-weight:700;
 cursor:pointer;
 }
 
-.btn-dragon{
-background:#00ffcc;
-color:black;
+.dragon-btn{
+background:linear-gradient(135deg,#0066ff,#00c3ff);
+box-shadow:0 0 30px rgba(0,180,255,.25);
 }
 
-.btn-tiger{
-background:#ff5757;
-color:white;
+.tie-btn{
+background:linear-gradient(135deg,#00c853,#00ff99);
+box-shadow:0 0 30px rgba(0,255,140,.25);
 }
 
-.btn-tie{
-background:#ffd166;
-color:black;
+.tiger-btn{
+background:linear-gradient(135deg,#ff5722,#ff9800);
+box-shadow:0 0 30px rgba(255,120,0,.25);
 }
 
 .history{
+margin-top:25px;
+background:#0b1422;
+padding:18px;
+border-radius:22px;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.history-title{
+font-size:18px;
+font-weight:700;
+margin-bottom:12px;
+}
+
+.history-list{
 display:flex;
 flex-wrap:wrap;
 gap:8px;
-margin-top:15px;
 }
 
 .ball{
-width:40px;
-height:40px;
+width:34px;
+height:34px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-weight:bold;
+font-size:14px;
+font-weight:700;
 }
 
-.d{
-background:#00ffcc;
-color:black;
+.ball-dragon{
+background:#0099ff;
 }
 
-.t{
-background:#ff5757;
+.ball-tiger{
+background:#ff6d00;
 }
 
-.i{
-background:#ffd166;
-color:black;
-}
-
-.info{
-line-height:2;
-font-size:18px;
-}
-
-.reset{
-width:100%;
-background:#ffffff;
-color:black;
-margin-top:15px;
-}
-
-.back{
-display:block;
-text-align:center;
-background:#00ffcc;
-color:black;
-text-decoration:none;
-padding:15px;
-border-radius:12px;
-font-weight:bold;
-margin-top:15px;
+.ball-tie{
+background:#00c853;
 }
 </style>
 </head>
 
 <body>
 
-<div class="logo">VORTEX X</div>
-<div class="subtitle">Dragon Tiger Pro Dashboard</div>
-
-<div class="card">
-
-<div class="stats">
-
-<div class="stat dragon">
-<h3>🐉 Dragon</h3>
-<span id="dragonCount">0</span>
+<div class="topbar">
+<a href="dashboard.html" class="back">←</a>
+<div class="menu">☰</div>
 </div>
 
-<div class="stat tiger">
-<h3>🐯 Tiger</h3>
-<span id="tigerCount">0</span>
+<div class="logo">
+DRAGON TIGER PRO
 </div>
 
-<div class="stat tie">
-<h3>⚪ Tie</h3>
-<span id="tieCount">0</span>
+<div class="subtitle">
+REAL TIME SESSION ANALYTICS
+</div>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<div class="stat-title">💰 BANKROLL</div>
+<div class="stat-value" id="bankroll">₹0</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-title">🎯 TARGET</div>
+<div class="stat-value" id="target">₹0</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-title">📈 PROFIT</div>
+<div class="stat-value profit" id="profit">₹0</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-title">📉 LOSS</div>
+<div class="stat-value loss" id="loss">₹0</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-title">🔥 STREAK</div>
+<div class="stat-value" id="streak">0</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-title">🟢 STATUS</div>
+<div class="stat-value live">LIVE</div>
 </div>
 
 </div>
 
-<div class="buttons">
+<div class="action-grid">
 
-<button class="btn-dragon" onclick="addResult('D')">
-DRAGON
+<button class="action-btn dragon-btn">
+🐉 DRAGON
 </button>
 
-<button class="btn-tiger" onclick="addResult('T')">
-TIGER
+<button class="action-btn tie-btn">
+🤝 TIE
 </button>
 
-<button class="btn-tie" onclick="addResult('I')">
-TIE
-</button>
-
-</div>
-
-</div>
-<div class="card">
-<h2>📜 Round History</h2>
-<div id="history" class="history"></div>
-</div>
-
-<div class="card">
-<h2>📊 Analytics</h2>
-
-<div class="info">
-<p>Total Rounds: <span id="totalRounds">0</span></p>
-<p>Dragon Win %: <span id="dragonRate">0%</span></p>
-<p>Tiger Win %: <span id="tigerRate">0%</span></p>
-<p>Tie Rate: <span id="tieRate">0%</span></p>
-
-<p>Current Streak:
-<span id="currentStreak">0</span>
-</p>
-
-<p>Trend:
-<span id="trend">Neutral</span>
-</p>
-
-<p>Probability:
-<span id="probability">Waiting...</span>
-</p>
-</div>
-
-<button class="reset" onclick="resetData()">
-RESET SESSION
+<button class="action-btn tiger-btn">
+🐯 TIGER
 </button>
 
 </div>
 
-<a href="dashboard.html" class="back">
-⬅ BACK TO DASHBOARD
-</a>
+<div class="history">
+
+<div class="history-title">
+ROUND HISTORY
+</div>
+
+<div class="history-list" id="historyList">
+</div>
+
+</div>
+<div class="section">
+
+<div class="stat-card">
+
+<div class="stat-title">
+📊 SESSION PROBABILITY
+</div>
+
+<div class="stat-value" id="probability">
+0%
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="stat-card">
+
+<div class="stat-title">
+🔮 NEXT TREND
+</div>
+
+<div class="stat-value" id="nextTrend">
+WAITING...
+</div>
+
+</div>
+
+</div>
 
 <script>
 
-let dragon=0;
-let tiger=0;
-let tie=0;
+let bankroll =
+localStorage.getItem("bankroll") || 0;
 
-let history=[];
+let target =
+localStorage.getItem("target") || 0;
 
-function addResult(type){
+document.getElementById("bankroll").innerText =
+"₹" + bankroll;
 
-history.push(type);
+document.getElementById("target").innerText =
+"₹" + target;
 
-if(type==="D") dragon++;
-if(type==="T") tiger++;
-if(type==="I") tie++;
+let dragon = 0;
+let tiger = 0;
+let tie = 0;
 
-updateUI();
+let streak = 0;
+let lastWinner = "";
 
-}
+const historyList =
+document.getElementById("historyList");
 
-function updateUI(){
+function addHistory(text,cls){
 
-document.getElementById("dragonCount").innerText=dragon;
-document.getElementById("tigerCount").innerText=tiger;
-document.getElementById("tieCount").innerText=tie;
+const ball =
+document.createElement("div");
 
-let total=dragon+tiger+tie;
+ball.className =
+"ball " + cls;
 
-document.getElementById("totalRounds").innerText=total;
+ball.innerText = text;
 
-document.getElementById("dragonRate").innerText=
-total?((dragon/total)*100).toFixed(1)+"%":"0%";
-
-document.getElementById("tigerRate").innerText=
-total?((tiger/total)*100).toFixed(1)+"%":"0%";
-
-document.getElementById("tieRate").innerText=
-total?((tie/total)*100).toFixed(1)+"%":"0%";
-
-let historyBox=document.getElementById("history");
-historyBox.innerHTML="";
-
-history.slice().reverse().forEach(r=>{
-
-let div=document.createElement("div");
-
-if(r==="D"){
-div.className="ball d";
-div.innerText="D";
-}
-
-if(r==="T"){
-div.className="ball t";
-div.innerText="T";
-}
-
-if(r==="I"){
-div.className="ball i";
-div.innerText="T";
-}
-
-historyBox.appendChild(div);
-
-});
-
-updateTrend();
-updateStreak();
+historyList.prepend(ball);
 
 }
 
-function updateTrend(){
+function updateStats(){
 
-let trend="Neutral";
-let probability="50% / 50%";
+let total =
+dragon + tiger + tie;
 
-if(dragon>tiger){
-trend="🐉 Dragon Dominant";
-probability="Dragon 55% | Tiger 45%";
-}
-
-if(tiger>dragon){
-trend="🐯 Tiger Dominant";
-probability="Tiger 55% | Dragon 45%";
-}
-
-document.getElementById("trend").innerText=trend;
-document.getElementById("probability").innerText=probability;
-
-}
-
-function updateStreak(){
-
-if(history.length===0){
-document.getElementById("currentStreak").innerText="0";
+if(total===0){
 return;
 }
 
-let last=history[history.length-1];
-let streak=1;
+let dragonPercent =
+((dragon/total)*100).toFixed(1);
 
-for(let i=history.length-2;i>=0;i--){
+let tigerPercent =
+((tiger/total)*100).toFixed(1);
 
-if(history[i]===last){
+if(dragonPercent > tigerPercent){
+
+document.getElementById(
+"probability"
+).innerText =
+"🐉 " + dragonPercent + "%";
+
+document.getElementById(
+"nextTrend"
+).innerText =
+"🐉 DRAGON TREND";
+
+}else{
+
+document.getElementById(
+"probability"
+).innerText =
+"🐯 " + tigerPercent + "%";
+
+document.getElementById(
+"nextTrend"
+).innerText =
+"🐯 TIGER TREND";
+
+}
+
+document.getElementById(
+"streak"
+).innerText =
+streak;
+
+}
+
+document.querySelector(
+".dragon-btn"
+).onclick = ()=>{
+
+dragon++;
+
+if(lastWinner==="DRAGON"){
 streak++;
 }else{
-break;
+streak=1;
+lastWinner="DRAGON";
 }
 
+addHistory(
+"D",
+"ball-dragon"
+);
+
+updateStats();
+
+};
+
+document.querySelector(
+".tiger-btn"
+).onclick = ()=>{
+
+tiger++;
+
+if(lastWinner==="TIGER"){
+streak++;
+}else{
+streak=1;
+lastWinner="TIGER";
 }
 
-document.getElementById("currentStreak").innerText=
-last+" x"+streak;
+addHistory(
+"T",
+"ball-tiger"
+);
 
-}
+updateStats();
 
-function resetData(){
+};
 
-dragon=0;
-tiger=0;
-tie=0;
-history=[];
+document.querySelector(
+".tie-btn"
+).onclick = ()=>{
 
-updateUI();
+tie++;
 
-}
+addHistory(
+"T",
+"ball-tie"
+);
+
+updateStats();
+
+};
 
 </script>
 
